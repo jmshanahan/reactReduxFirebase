@@ -13,15 +13,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "precommit": "lint-staged"
-  },
-  "lint-staged": {},
-  "src/**/*.{js,jsx,json,css}": [
-    "prettier --write",
-    "git add"
-  ],
-  "eslintConfig": {
-    "extends": "react-app"
+    "precommit": "pretty-quick --staged"
   },
   "browserslist": [
     ">0.2%",
@@ -33,6 +25,7 @@
     "eslint-config-prettier": "^3.1.0",
     "eslint-plugin-prettier": "^3.0.0",
     "husky": "^1.1.1",
-    "lint-staged": "^7.3.0"
+    "lint-staged": "^7.3.0",
+    "pretty-quick": "^1.7.0"
   }
 }
