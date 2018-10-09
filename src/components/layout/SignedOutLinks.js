@@ -5,11 +5,10 @@ export default () => {
   return (
     <ul className="right">
       <li>
-        <NavLink to="/" />
-        Signup
+        <NavLink to="/signup">Signup</NavLink>
       </li>
       <li>
-        <NavLink to="/">Log Login</NavLink>
+        <NavLink to="/signin">Login</NavLink>
       </li>
     </ul>
   );
