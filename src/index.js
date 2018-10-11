@@ -11,22 +11,17 @@ import { reduxFirestore, getFirestore } from "redux-firestore";
 import { reactReduxFirebase, getFirebase } from "react-redux-firebase";
 import fbConfig from "./config/fbConfig";
 
-/* eslint-disable no-underscore-dangle */
-// const store = createStore(
-//   rootReducer /* preloadedState, */,
-//   applyMiddleware(thunk),
-//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-// );
 /* eslint-enable */
-
 const store = createStore(
   rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   compose(
     applyMiddleware(thunk.withExtraArgument({ getFirebase, getFirestore })),
     reactReduxFirebase(fbConfig), // redux binding for firebase
     reduxFirestore(fbConfig) // redux bindings for firestore
   )
 );
+/* eslint-disable no-underscore-dangle */
 
 ReactDOM.render(
   <Provider store={store}>
