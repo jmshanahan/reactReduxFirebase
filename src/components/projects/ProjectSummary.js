@@ -1,4 +1,5 @@
 import React from "react";
+import moment from "moment";
 
 export default ({ project }) => {
   return (
@@ -8,7 +9,9 @@ export default ({ project }) => {
         <p>
           {project.authorFirstName} {project.authorLastName}
         </p>
-        <p className="grey-text"> 4 October</p>
+        <p className="grey-text">
+          {moment(project.createdAt.toDate()).calendar()}
+        </p>
       </div>
     </div>
   );
